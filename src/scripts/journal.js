@@ -1,92 +1,42 @@
-/*
-const journalEntry = {
-  date: "01.17.2020",
-  concepts: "Objects and functions",
-  entry:
-    "Learned the basics of objects, and working with functions as well as methods.",
-  mood: "motivated"
+// entriesFromAPI is callback taking the return value of the fetch, being turned to json. Which is our array, which we iterate with forEach, giving that a callback (journalEntry) to represent each iterator vairable or each single journal entry. We then create a variable that calls our factory function giing it the callback as an argument to execute rendering the html with the info returned.
+
+function checkParsed() {
+  const url = "http://localhost:8088/entries";
+  fetch(url)
+    .then(resp => resp.json())
+    .then(parsedEntries => {
+      console.log(parsedEntries);
+    });
+}
+checkParsed();
+// quick check to ensure we are returning the correct array.
+
+const getEntries = () => {
+  const url = "http://localhost:8088/entries";
+  fetch(url)
+    .then(resp => resp.json())
+    .then(entriesFromAPI => {
+      entriesFromAPI.forEach(journalEntry => {
+        const entryHTML = journalFactory(journalEntry);
+        renderEntry(entryHTML);
+      });
+    });
 };
 
-const firstJournalEntry = [];
-firstJournalEntry.push(journalEntry);
-console.log(firstJournalEntry);
-
-const journalEntry = (date, concepts, entry, mood) => {
-  return {
-    date: date,
-    concepts: concepts,
-    entry: entry,
-    mood: mood
-  };
-}
-*/
-const journalEntries = [
-  {
-    date: new Date(),
-    concepts: "Objects and functions",
-    entry:
-      "Learned the basics of objects, and working with functions as well as methods.",
-    mood: "motivated"
-  },
-  {
-    date: new Date(),
-    concepts: "flexbox",
-    entry: "Worked with CSS to build better styling skills with flexbox.",
-    mood: "neutral"
-  }
-];
-/*
-function journalEntry(date, concepts, entry, mood) {
-    return {
-      date,
-      concepts,
-      entry,
-      mood,
-    }
-}
-
-const firstJournalEntry = journalEntry(new Date(), "Objects and functions", "Learned the basics of objects, and working with functions as well as methods.", "motivated");
-console.log(firstJournalEntry);
-let journalEntries = [];
-journalEntries.push(firstJournalEntry);
-// console.log(journalEntries);
-
-
-const secondJournalEntry = journalEntry(new Date(), "flexbox", "Worked with CSS to build better styling skills with flexbox.", "neutral");
-journalEntries.push(secondJournalEntry);
-console.log(journalEntries);
-*/
-
-/*
-    Purpose: To create, and return, a string template that
-    represents a single journal entry object as HTML
-    Arguments: journalEntry (object)
-*/
-journalEntries.forEach(journalEntry => {
-  const entryLogContainer = document.querySelector(".entryLog");
-  entryLogContainer.innerHTML += makeJournalEntryComponent(journalEntry);
-});
-
-function makeJournalEntryComponent(journalEntry) {  // can also use destructuring
-  // can also use destructuring
+const journalFactory = ({ date, concepts, entry, mood }) => {
   return `
-    <h1>${journalEntry.concepts}</h1>
-    <h3>${journalEntry.date}</h3>
-    <section>${journalEntry.entry}</section>
-    <section>${journalEntry.mood}</section>
-  `;
-}
+  <div class="log_blocks">
+        <h1>${concepts}</h1>
+        <h3>${date}</h3>
+        <section>${entry}</section>
+        <section>${mood}</section>
+        </div>
+      `;
+};
 
+const renderEntry = entryHTML => {
+  const entryLogContainer = document.querySelector(".entry_log");
+  entryLogContainer.innerHTML += entryHTML;
+};
 
-/*
-    Purpose: To render all journal entries to the DOM
-
-    Arguments: entries (array of objects)
-
-const renderJournalEntries = (entries) => {
-
-}
-
-// Invoke the render function
-renderJournalEntries(journalEntries)
-*/
+getEntries();
