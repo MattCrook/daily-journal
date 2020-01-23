@@ -2,28 +2,28 @@
   "entries": [
     {
       "id": 1,
-      "date": new Date(),
+      "date": "01/20/2020",
       "concepts": "Objects and functions",
       "entry": "Learned the basics of objects, and working with functions as well as methods.",
       "mood": "motivated"
     },
     {
       "id": 2,
-      "date": new Date(),
+      "date": "01/21/2020",
       "concepts": "flexbox",
       "entry": "Worked with CSS to build better styling skills with flexbox.",
       "mood": "neutral"
     },
     {
       "id": 3,
-      "date": new Date(),
+      "date": "01/22/2020",
       "concepts": "API's",
       "entry": "Learned how to use Postman as well as the fetch() call and how to work with data from API's.",
       "mood": "good"
     },
     {
     "id": 4,
-      "date": new Date(),
+      "date": "01/23/2020",
       "concepts": "Modules",
       "entry": "Took our first steps into ES6 modules. I LOVE this topic. Class is starting to pick up the pace which I want and enjoy. I want to be PUSHED to the limit.",
       "mood": "motivated"
