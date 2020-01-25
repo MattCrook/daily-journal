@@ -1,35 +1,15 @@
 /*
     Main application logic that uses the functions and objects
     defined in the other JavaScript files.
-
-    Change the fake variable names below to what they should be
-    to get the data and display it.
 */
 
+// Calling getJournalEntries to executed main logic.
 API.getJournalEntries().then(renderEntry);
 
-
-/*
-function checkParsed() {
-    const url = "http://localhost:8088/entries";
-    fetch(url)
-      .then(resp => resp.json())
-      .then(parsedEntries => {
-        console.log(parsedEntries);
-      });
-  }
-  checkParsed();
-  // quick check to ensure we are returning the correct array.
-
-  const getEntries = () => {
-    const url = "http://localhost:8088/entries";
-    fetch(url)
-      .then(resp => resp.json())
-      .then(entriesFromAPI => {
-        entriesFromAPI.forEach(journalEntry => {
-          const entryHTML = journalFactory(journalEntry);
-          renderEntry(entryHTML);
-        });
-      });
-  };
-  */
+// Executing the refactored async function. Using async await cuts the code needed to write in half!
+getJournalEntries().then((entriesFromAPI) => {
+    entriesFromAPI.forEach((journalEntry) => {
+        const entryHTML = journalFactory(journalEntry);
+        renderEntry(entryHTML);
+    });
+});

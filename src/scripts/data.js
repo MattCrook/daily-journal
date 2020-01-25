@@ -11,6 +11,7 @@ function checkParsed() {
 checkParsed();
 // quick check to ensure we are returning the correct array.
 
+// Creating new object to hold our methods we will call to execute main logic in journal.js.
 const API = {
   getJournalEntries() {
     const url = "http://localhost:8088/entries";
@@ -24,29 +25,32 @@ const API = {
       });
   }
 };
-
-
-// same as:
-/*
+// Method can also be written as:
 const API = {
-    getJournalEntries: function () {
-        return fetch("http://localhost:3000/entries")
-            .then(response => response.json())
-    }
-}
-*/
+  getJournalEntries: function() {
+    return fetch("http://localhost:3000/entries").then(response =>
+      response.json()
+    );
+  }
+};
 
+// Refactor to use async await
+const url = "http://localhost:8088/entries";
 
-/*
-old API fetch call:
-  const getEntries = () => {
-    const url = "http://localhost:8088/entries";
-    fetch(url)
-      .then(resp => resp.json())
-      .then(entriesFromAPI => {
-        entriesFromAPI.forEach(journalEntry => {
-          const entryHTML = journalFactory(journalEntry);
-          renderEntry(entryHTML);
-        });
+async function getJournalEntries() {
+  let response = await fetch(url); // The response returned by the fulfilled fetch() promise is assigned to the response variable when that response becomes available, and the parser pauses on this line until that occurs. Once the response is available, the parser moves to the next line,
+  return await response.json();
+};
+
+// Old API fetch call:
+const getEntries = () => {
+  const url = "http://localhost:8088/entries";
+  fetch(url)
+    .then(resp => resp.json())
+    .then(entriesFromAPI => {
+      entriesFromAPI.forEach(journalEntry => {
+        const entryHTML = journalFactory(journalEntry);
+        renderEntry(entryHTML);
       });
-  };
+    });
+};
