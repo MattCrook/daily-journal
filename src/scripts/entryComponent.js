@@ -1,5 +1,4 @@
 // responsible for creating the journal entry HTML component
-
 const journalFactory = ({ date, concepts, entry, mood }) => {
     return `
     <div class="log_blocks">
@@ -10,3 +9,5 @@ const journalFactory = ({ date, concepts, entry, mood }) => {
           </div>
         `;
   };
+
+  export { journalFactory as default }
