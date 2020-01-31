@@ -27,6 +27,14 @@
       "concepts": "Modules",
       "entry": "Took our first steps into ES6 modules. I LOVE this topic. Class is starting to pick up the pace which I want and enjoy. I want to be PUSHED to the limit.",
       "mood": "motivated"
-    }
+    },
+    {
+      "id": 4,
+        "date": "01/31/2020",
+        "concepts": "Group Project, Vanilla JS",
+        "entry": "Just had our second group project, 'Welcome to Nashville.' Went well, learned alot more about API calls and writing vanilla JS to dynamically render DOM.",
+        "mood": "motivated"
+      }
   ]
 }
+
