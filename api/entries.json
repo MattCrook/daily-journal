@@ -43,25 +43,11 @@
       "id": 5
     },
     {
-      "date": "2020-02-14",
-      "concepts": "😍😘",
-      "entry": "🥰💋",
+      "date": "2020-02-02",
+      "concepts": "Vanilla JS/ API's",
+      "entry": "Set up functionality of journal entries to be able to input entries on UI and the entry save to my json db and render below in my entries section. The click handler sends the input data to the DB in json from, then checks to grab most recent state of DB to render to new entry plus the old ones below!",
       "mood": "happy",
       "id": 6
-    },
-    {
-      "date": "2020-02-14",
-      "concepts": "👅",
-      "entry": "👻",
-      "mood": "motivated",
-      "id": 7
-    },
-    {
-      "date": "2020-02-14",
-      "concepts": "🦵",
-      "entry": "🍆",
-      "mood": "happy",
-      "id": 8
     }
   ]
 }
