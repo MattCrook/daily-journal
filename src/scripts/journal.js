@@ -6,6 +6,8 @@ import apiManager from "./api-manager.js";
 import journalFactory from "./entryComponent.js";
 import journalManager from "./journalManager.js";
 import renderEntry from "./entriesDOM.js";
+import radioFilter from "./radioButtons.js"
+
 
 // import renderEntry from "./entriesDOM.js"
 
@@ -23,6 +25,7 @@ function init() {
     });
   });
   journalManager.recordJournalEvent();
+  radioFilter.getRadioButton();
 }
 
 init();
