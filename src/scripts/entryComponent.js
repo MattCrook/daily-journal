@@ -5,7 +5,7 @@ const journalFactory = ({ date, concepts, entry, mood }) => {
           <h1>${concepts}</h1>
           <h3>${date}</h3>
           <section>${entry}</section>
-          <section>Feeling <strong>${mood}</strong></section>
+          <section id="${mood}">Feeling <strong>${mood}</strong></section>
           </div>
         `;
   };

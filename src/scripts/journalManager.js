@@ -1,6 +1,7 @@
 import apiManager from "./api-manager.js";
-import journalFactory from "./entryComponent.js"
-import renderEntry from "./entriesDOM.js"
+import journalFactory from "./entryComponent.js";
+import renderEntry from "./entriesDOM.js";
+import radioFilter from "./radioButtons.js";
 
 const recordJournalManager = {
   recordJournalEvent() {
@@ -13,16 +14,17 @@ const recordJournalManager = {
         const concepts = document.getElementById("concepts").value;
         const entry = document.getElementById("journalEntry").value;
         const mood = document.getElementById("mood").value;
-
+        // define structure of object to be put in API
         const journalObject = { date, concepts, entry, mood };
+        // promise for POST request...then() blowing away and reloading page with updated version
         apiManager
           .postDataJournal(journalObject)
           .then(response => {
             //console.log("response: ", response);
             apiManager.getJournal().then(entriesFromAPI => {
-                const entryLogContainer = document.querySelector(".entry_log");
-                entryLogContainer.innerHTML = "";
-                entriesFromAPI.forEach(journalEntry => {
+              const entryLogContainer = document.querySelector(".entry_log");
+              entryLogContainer.innerHTML = "";
+              entriesFromAPI.forEach(journalEntry => {
                 const entryHTML = journalFactory(journalEntry);
                 renderEntry(entryHTML);
               });

@@ -85,3 +85,75 @@ const API = {
   }
 };
 */
+
+
+
+
+
+
+//ADDING THE RADIO BUTTON JOURNAL 8 DRAFTS
+/*
+  const entryLogContainer = document.querySelector("entry_log");
+  console.log("entryLogContainer:", entryLogContainer);
+  entryLogContainer.innerHTML = "";
+
+  const entryLogValue = mood.
+  console.log("entryLogValue:", entryLogValue);
+  //entryLogContainer.innerHTML = "";
+  entriesFromAPI.filter((entry) => {
+      console.log("entry:", entry);
+  });
+
+  if (entriesFromAPI.mood === entryLogValue) {
+    entriesFromAPI.filter(entries => {
+      entries.forEach(filteredByMoodArray => {
+        const filteredEntryHML = journalFactory(filteredByMoodArray);
+        renderEntry(filteredEntryHML);
+
+
+
+  renderRadioSelection() {
+    apiManager.getJournal().then(entriesFromAPI => {
+      const entryLogContainer = document.querySelector(".entry_log");
+      const entryLogValue = document.querySelector(".entry_log").value;
+      entryLogContainer.innerHTML = "";
+      if (this.radioButtonValue === entryLogValue) {
+        entriesFromAPI.filter(entries => {
+          entries.forEach(filteredByMoodArray => {
+            const filteredEntryHML = journalFactory(filteredByMoodArray);
+            renderEntry(filteredEntryHML);
+          });
+        });
+      }
+    });
+  }
+};
+
+const radioFilter = {
+  // object holding method to call once event is triggered
+  getRadioButton() {
+    const radioButton = document.getElementsByName("mood-of-day");
+    radioButton.forEach(mood => {
+      mood.addEventListener("click", event => {
+        event.preventDefault();
+        const radioButtonValue = event.target.value;
+        const entryLogValue = document.querySelector(".entry_log").value;
+        if (radioButtonValue === entryLogValue) {
+            .then((response) => {
+          apiManager.getJournal().then(entriesFromAPI => {
+            const entryLogContainer = document.querySelector(".entry_log");
+            entryLogContainer.innerHTML = "";
+            entriesFromAPI.filter(entries => {
+              entries.forEach(filteredByMoodArray => {
+                const filteredEntryHML = journalFactory(filteredByMoodArray);
+                renderEntry(filteredEntryHML);
+              });
+            });
+          });
+        })
+    }
+      });
+    });
+  }
+};
+*/
