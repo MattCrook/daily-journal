@@ -7,7 +7,7 @@
 
 const apiManager = {
   async getJournal() {
-    const response = await fetch("http://localhost:8088/entries");
+    const response = await fetch(`http://localhost:8088/entries/`);
     return await response.json();
   },
   postDataJournal(journalObj) {
@@ -18,7 +18,22 @@ const apiManager = {
       },
       body: JSON.stringify(journalObj)
     });
-  }
+  },
+  updateJournal (journalId) {
+    return fetch(`http://localhost:8088/entries/${journalId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(journalEntry)
+    });
+  },
+  async deleteJournal(journalEntry) {
+    const response = await fetch(`http://localhost:8088/entries/${journalEntry}`, {
+      method: "DELETE"
+    });
+    return await response.json();
+  },
 };
 
 export default apiManager;

@@ -1,13 +1,6 @@
 {
   "entries": [
     {
-      "id": 1,
-      "date": "01/20/2020",
-      "concepts": "Objects and functions",
-      "entry": "Learned the basics of objects, and working with functions as well as methods.",
-      "mood": "motivated"
-    },
-    {
       "id": 2,
       "date": "01/21/2020",
       "concepts": "Flexbox",
@@ -48,6 +41,13 @@
       "entry": "Set up functionality of journal entries to be able to input entries on UI and the entry save to my json db and render below in my entries section. The click handler sends the input data to the DB in json from, then checks to grab most recent state of DB to render to new entry plus the old ones below!",
       "mood": "happy",
       "id": 6
+    },
+    {
+      "date": "",
+      "concepts": "test submit",
+      "entry": "testing",
+      "mood": "neutral",
+      "id": 7
     }
   ]
 }
