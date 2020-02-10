@@ -4,9 +4,10 @@
 
 import apiManager from "./api-manager.js";
 import journalFactory from "./entryComponent.js";
-import journalManager from "./journalManager.js";
+import recordJournalManager from "./journalManager.js";
 import renderEntry from "./entriesDOM.js";
-import radioFilter from "./radioButtons.js"
+import radioFilter from "./radioButtons.js";
+import deleteJournalAction from "./deleteButton.js";
 
 
 // import renderEntry from "./entriesDOM.js"
@@ -24,8 +25,9 @@ function init() {
       renderEntry(entryHTML);
     });
   });
-  journalManager.recordJournalEvent();
+  recordJournalManager.recordJournalEvent();
   radioFilter.getRadioButton();
-}
+  deleteJournalAction.deleteButtonAction();
+};
 
 init();

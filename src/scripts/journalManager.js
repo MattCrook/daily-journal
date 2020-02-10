@@ -1,7 +1,9 @@
 import apiManager from "./api-manager.js";
 import journalFactory from "./entryComponent.js";
 import renderEntry from "./entriesDOM.js";
-import radioFilter from "./radioButtons.js";
+
+// responsible for initial load of the page. This module fetches data from API to render entries to page. 
+// event listener on submit button 
 
 const recordJournalManager = {
   recordJournalEvent() {

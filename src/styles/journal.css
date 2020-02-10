@@ -10,3 +10,8 @@ div {
 .entry_log {
     border: 1px solid black;
 }
+
+.edit-delete-btns {
+    justify-content: space-evenly;
+
+}

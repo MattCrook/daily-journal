@@ -10,62 +10,63 @@
 </head>
 
 <body>
-    <h1>Daily Journal 📓 </h1>
-    <form action="">
-        <fieldset>
-            <div>
-                <label for="journalDate">Date of Entry</label>
-                <input type="date" name="journalDate" id="journalDate">
-            </div>
-            <div>
-                <label for="concepts">Concepts Covered</label>
-                <input type="text" name="concepts" id="concepts">
-            </div>
-            <div>
-                <label for="journalEntry">Journal Entry</label>
-                <input type="text" name="journalEntry" id="journalEntry">
-            </div>
-            <div>
-                <label for="mood">Mood of the Day</label>
-                <select id="mood">
-                    <option value="happy">Happy</option>
-                    <option value="sad">Sad</option>
-                    <option value="confused">Confused</option>
-                    <option value="neutral">Neutral</option>
-                    <option value="motivated">Motivated</option>
-                    <option value="lost">Lost</option>
-                </select>
-            </div>
-            <div>
-                <label for="mood">Filter Journals By Mood of the Day</label>
-                <legend id="mood">
-                    <input type="radio" id="happy" name="mood-of-day" value="happy">
-                    <label for="happy">Happy</label>
+    <h1>Daily Journal 📓</h1>
+    <section id="form">
+        <form>
+            <input type="hidden" id="journalId" value="" />
+            <fieldset>
+                <div>
+                    <label for="journalDate">Date of Entry</label>
+                    <input type="date" name="journalDate" id="journalDate">
+                </div>
+                <div>
+                    <label for="concepts">Concepts Covered</label>
+                    <input type="text" name="concepts" id="concepts">
+                </div>
+                <div>
+                    <label for="journalEntry">Journal Entry</label>
+                    <input type="text" name="journalEntry" id="journalEntry">
+                </div>
+                <div>
+                    <label for="mood">Mood of the Day</label>
+                    <select id="mood">
+                        <option value="happy">Happy</option>
+                        <option value="sad">Sad</option>
+                        <option value="confused">Confused</option>
+                        <option value="neutral">Neutral</option>
+                        <option value="motivated">Motivated</option>
+                        <option value="lost">Lost</option>
+                    </select>
+                </div>
+                <input type="submit" value="Record Journal Entry">
+            </fieldset>
+            <fieldset>
+                <div>
+                    <!--radio buttons-->
+                    <label for="mood">Filter Journals By Mood of the Day</label>
+                    <legend id="mood">
+                        <input type="radio" id="happy" name="mood-of-day" value="happy">
+                        <label for="happy">Happy</label>
 
-                    <input type="radio" id="sad" name="mood-of-day" value="sad">
-                    <label for="sad">Sad</label>
+                        <input type="radio" id="sad" name="mood-of-day" value="sad">
+                        <label for="sad">Sad</label>
 
-                    <input type="radio" id="confused" name="mood-of-day" value="confused">
-                    <label for="confused">Confused</label>
+                        <input type="radio" id="confused" name="mood-of-day" value="confused">
+                        <label for="confused">Confused</label>
 
-                    <input type="radio" id="neutral" name="mood-of-day" value="neutral">
-                    <label for="neutral">Neutral</label>
+                        <input type="radio" id="neutral" name="mood-of-day" value="neutral">
+                        <label for="neutral">Neutral</label>
 
-                    <input type="radio" id="motivated" name="mood-of-day" value="motivated">
-                    <label for="motivated">Motivated</label>
+                        <input type="radio" id="motivated" name="mood-of-day" value="motivated">
+                        <label for="motivated">Motivated</label>
 
-                    <input type="radio" id="lost" name="mood-of-day" value="lost">
-                    <label for="lost">Lost</label>
-                </legend>
-            </div>
-
-
-
-
-
-        </fieldset>
-        <input type="submit" value="Record Journal Entry">
-    </form>
+                        <input type="radio" id="lost" name="mood-of-day" value="lost">
+                        <label for="lost">Lost</label>
+                    </legend>
+                </div>
+            </fieldset>
+        </form>
+    </section>
     <article class="entry_log">
         <script type="module" src="src/scripts/journal.js"></script>
     </article>
