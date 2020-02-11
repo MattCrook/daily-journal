@@ -1,6 +1,7 @@
 import apiManager from "./api-manager.js";
 import journalFactory from "./entryComponent.js";
 import renderEntry from "./entriesDOM.js";
+import modal from "./myModal.js";
 
 const deleteJournalAction = {
   deleteButtonAction() {
@@ -18,9 +19,6 @@ const deleteJournalAction = {
               renderEntry(entryHTML);
             });
           });
-      } else if (event.target.id.startsWith("editJournal--")) {
-        const journalToEdit = event.target.id.split("--")[1];
-        updateJournalFields(journalToEdit);
       }
     });
   }
