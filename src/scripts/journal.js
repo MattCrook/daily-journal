@@ -8,6 +8,7 @@ import recordJournalManager from "./journalManager.js";
 import renderEntry from "./entriesDOM.js";
 import radioFilter from "./radioButtons.js";
 import deleteJournalAction from "./deleteButton.js";
+import { editButtonAction } from "./editButton.js";
 
 
 // import renderEntry from "./entriesDOM.js"
@@ -28,6 +29,40 @@ function init() {
   recordJournalManager.recordJournalEvent();
   radioFilter.getRadioButton();
   deleteJournalAction.deleteButtonAction();
-};
+  editButtonAction();
+}
 
 init();
+
+const myModalFunction = () => {
+  const journalEntryContainer = document.querySelector(".entry_log");
+  const openModals = document.querySelectorAll("[data-open]");
+  openModals.forEach(trigger => {
+    trigger.addEventListener("click", event => {
+      if (openModals.classList) {
+        openModals.classList.add("open");
+      }
+      event.preventDefault();
+    });
+  });
+};
+myModalFunction();
+
+//   journalEntryContainer.addEventListener("click", event => {
+// if (event.target.id.startsWith("editJournal--")) {
+//   const journalToEdit = event.target.id.split("--")[1];
+//   //console.log("journaltoedit:", journalToEdit); // id
+//   // const isVisible = "is-visible";
+//   // console.log(journalToEdit.);
+//   openEls.forEach(trigger => {
+//     trigger.addEventListener("click", event => {
+//       if (modalWindow.classList) {
+//         modalWindow.classList.add("open");
+//       }
+
+//       event.preventDefault();
+//     });
+//   });
+//  }
+// };
+// myModalFunction();
