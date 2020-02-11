@@ -3,7 +3,7 @@ import journalFactory from "./entryComponent.js";
 import renderEntry from "./entriesDOM.js";
 
 // responsible for initial load of the page. This module fetches data from API to render entries to page.
-// event listener on submit button
+// recordJournalEvent is event listener on submit button
 
 const recordJournalManager = {
   recordJournalEvent() {

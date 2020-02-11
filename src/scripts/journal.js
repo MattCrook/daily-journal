@@ -1,6 +1,10 @@
 /*
     Main application logic that uses the functions and objects
-    defined in the other JavaScript files.*/
+    defined in the other JavaScript files.
+    This is the main entry point from the root.
+    Function init() is executing rendering initial page, then calls all other function/ events. 
+
+    */
 
 import apiManager from "./api-manager.js";
 import journalFactory from "./entryComponent.js";
@@ -34,6 +38,7 @@ function init() {
 
 init();
 
+/*
 const myModalFunction = () => {
   const journalEntryContainer = document.querySelector(".entry_log");
   const openModals = document.querySelectorAll("[data-open]");
@@ -47,6 +52,8 @@ const myModalFunction = () => {
   });
 };
 myModalFunction();
+
+*/
 
 //   journalEntryContainer.addEventListener("click", event => {
 // if (event.target.id.startsWith("editJournal--")) {
